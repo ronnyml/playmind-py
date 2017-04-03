@@ -1,0 +1,8 @@
+# Files
+*.pyc
+
+# Linux
+*~
+
+# KDE
+.directory
