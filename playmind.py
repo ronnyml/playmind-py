@@ -57,7 +57,7 @@ class PlayMindGame(object):
 
     def init_game(self):
         """Ask the user if ready to start the game."""
-        ready = input('\nAre you ready to start? y/n: ')
+        ready = input('\n Are you ready to start? y/n: ')
         if ready.strip().lower() == 'y':
             self.start_game()
         elif ready.strip.lower() == 'n':
@@ -76,7 +76,7 @@ class PlayMindGame(object):
                 num_a, num_b = num_b, num_a
             operator_str = operations[self.operation - 1]
             result = self.get_result(operator_str, num_a, num_b)
-            question = '{0}/{1}:  {2} {3} {4} = '.format(
+            question = ' {0}/{1}:  {2} {3} {4} = '.format(
                 i + 1, self.num_questions, num_a, operator_str, num_b
             )
             user_answer = get_positive_int(question)
@@ -121,7 +121,7 @@ class PlayMindGame(object):
     def show_highscores(self):
         """Show highscores like the time and number of correct answers."""
         print('\n\t\tHIGHSCORES')
-        separators = '{} | {} | {} | {} | {} | {}'
+        separators = ' {} | {} | {} | {} | {} | {}'
         headers = [
             'Operation', 'Level', 'Correct',
             'Incorrect', 'Total', 'Time'
@@ -159,11 +159,11 @@ class PlayMindGame(object):
 def get_game_option(message, options):
     """Show a list of options based on the game question."""
     while True:
-        print(message + ': ')
+        print('{}: '.format(message))
         for i, option in enumerate(options):
-            print(i + 1, option)
+            print(' {} {}'.format(i + 1, option))
 
-        option = get_positive_int(': ')
+        option = get_positive_int(' : ')
         if option <= len(options):
             break
 
@@ -176,13 +176,13 @@ def get_positive_int(option):
         try:
             response_int = int(input(option))
         except ValueError:
-            print('\n\nNot a valid option. Please, choose a number.')
+            print('\n\n Not a valid option. Please, choose a number.')
             continue
         except KeyboardInterrupt:
-            exit('\n\nGame Interrupted, Quitting.')
+            exit('\n\n Game Interrupted, Quitting.')
 
         if response_int <= 0:
-            print('\n\nNot a valid number. It should be positive.')
+            print('\n\n Not a valid number. It should be positive.')
             continue
         else:
             break
@@ -191,10 +191,10 @@ def get_positive_int(option):
 
 def main():
     """Set up and choose game options."""
-    print('\t\tPLAYMIND')
-    operation = get_game_option('\nChoose the operation', OPERATIONS)
-    level = get_game_option('\nChoose the level', LEVELS)
-    num_questions = get_positive_int('\nHow many questions? (5, 10, 100): ')
+    print('\n\t\tPLAYMIND')
+    operation = get_game_option('\n\tChoose the operation', OPERATIONS)
+    level = get_game_option('\n\tChoose the level', LEVELS)
+    num_questions = get_positive_int('\n How many questions? (5, 10, 100): ')
     playmind = PlayMindGame(operation, level, num_questions)
     playmind.init_game()
 
