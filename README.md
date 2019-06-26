@@ -1,6 +1,6 @@
-# PlayMind
+# playmind-py
 
-PlayMind is a Python 3 command line game to practice your Math skills.
+playmind-py is a Python 3 command line game to practice your Math skills.
 
 Train your mind doing mental calculations.
 
@@ -15,3 +15,5 @@ Train your mind doing mental calculations.
 
 ## Run the game:
 ``` ./playmind.py ```
+
+![playmind-py](/img/playmind-py.png)
