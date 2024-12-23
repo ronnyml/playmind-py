@@ -13,7 +13,6 @@ By Ronny Yabar <ronny@kde.org>
 
 import operator
 import time
-import webbrowser
 from random import randint
 
 OPERATIONS = [
@@ -126,8 +125,6 @@ class PlayMindGame:
         """Check if the player wins, then play a winning song."""
         if self.num_correct == self.num_questions:
             print('\n\t\tCONGRATULATIONS! YOU WIN.')
-            youtube_url = 'https://www.youtube.com/watch?v=uxfrz6iQb9A'
-            webbrowser.open(youtube_url)
 
 
 def get_game_option(message, options):
